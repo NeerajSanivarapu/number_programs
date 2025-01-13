@@ -18,6 +18,7 @@ st.image('images.jpg') # download the image in the same path where program file 
 no=st.number_input("ENTER THE NUMBER",min_value=0)
 prime=st.button('PRIME',type='primary')
 factorial=st.button('FACTORIAL',type='primary')
+perfect_number=st.button('PERFECT NUMBER',type='primary')
 if prime:
     for i in range(2,no):
         if no% i==0:
@@ -33,4 +34,12 @@ elif factorial:
         fact=fact*no
         no=no-1
     st.success(f'factorial of {temp} is :{fact}')
-
+elif perfect_number:
+    sum=0
+    for i in range(1,no):
+        if no % i==0:
+            sum+=i
+    if sum==no:
+        st.success('perfect number')
+    else:
+        st.error('not a perfect number')
